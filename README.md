@@ -18,8 +18,7 @@ Proje henüz geliştirme aşamasındadır. Teknik ayrıntılar, dokümantasyon v
 
 Geliştirme Durumu
 
-Bileşen | Durum
-Görsel kimlik ve logo | Tamamlandı
+Bileşen | Görsel kimlik ve logo | Tamamlandı
 Temel geliştirme | Tamamlandı
 Dokümantasyon | Planlanıyor
 Test süreçleri | Planlanıyor
