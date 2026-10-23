@@ -18,11 +18,11 @@ Proje henüz geliştirme aşamasındadır. Teknik ayrıntılar, dokümantasyon v
 
 Geliştirme Durumu
 
-Bileşen| Durum
-Görsel kimlik ve logo| Tamamlandı
-Temel geliştirme| Planlanıyor
-Dokümantasyon| Planlanıyor
-Test süreçleri| Planlanıyor
+Bileşen | Durum
+Görsel kimlik ve logo | Tamamlandı
+Temel geliştirme | Tamamlandı
+Dokümantasyon | Planlanıyor
+Test süreçleri | Planlanıyor
 
 Projenin Amacı
 
