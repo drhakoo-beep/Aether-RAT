@@ -16,12 +16,17 @@ Aether RAT, Windows platformuna yönelik, eğitim ve yetkilendirilmiş güvenlik
 
 Proje henüz geliştirme aşamasındadır. Teknik ayrıntılar, dokümantasyon ve geliştirme sürecine ilişkin güncellemeler ilerleyen aşamalarda paylaşılacaktır.
 
+
 Geliştirme Durumu
 
 Bileşen | Görsel kimlik ve logo | Tamamlandı
+
 Temel geliştirme | Tamamlandı
+
 Dokümantasyon | Planlanıyor
+
 Test süreçleri | Planlanıyor
+
 
 Projenin Amacı
 
