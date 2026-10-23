@@ -10,14 +10,14 @@
   <img src="https://img.shields.io/badge/Amaç-Eğitim%20ve%20Araştırma-lightgrey?style=for-the-badge">
 </p>---
 
-Hakkında
+*Hakkında*
 
 Aether RAT, Windows platformuna yönelik, eğitim ve yetkilendirilmiş güvenlik araştırmaları amacıyla geliştirilen deneysel bir uzaktan yönetim projesidir.
 
 Proje henüz geliştirme aşamasındadır. Teknik ayrıntılar, dokümantasyon ve geliştirme sürecine ilişkin güncellemeler ilerleyen aşamalarda paylaşılacaktır.
 
 
-Geliştirme Durumu
+*Geliştirme Durumu*
 
 Bileşen | Görsel kimlik ve logo | Tamamlandı
 
@@ -28,17 +28,17 @@ Dokümantasyon | Planlanıyor
 Test süreçleri | Planlanıyor
 
 
-Projenin Amacı
+*Projenin Amacı*
 
 - Windows sistemlerinin uzaktan yönetim mimarisini incelemek
 - Güvenlik araştırmaları için teknik deneyim kazanmak
 - Kontrollü ve izinli test ortamlarında çalışma yapmak
 
-Sorumluluk Bildirimi
+*Sorumluluk Bildirimi*
 
 Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanmaktadır. İzinsiz erişim, gözetim veya başkalarının verilerinin ele geçirilmesi amacıyla kullanılmamalıdır.
 
-Geliştirme
+*Geliştirme*
 
 Proje geliştikçe yeni bilgiler ve teknik belgeler bu depo üzerinden paylaşılacaktır.
 
