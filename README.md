@@ -12,6 +12,8 @@
 
 *Hakkında*
 
+![Panel Ekran Görüntüsü](goruntuler/Screenshot_2026-10-24_06_15_24.png)
+
 Aether RAT, Windows platformuna yönelik, eğitim ve yetkilendirilmiş güvenlik araştırmaları amacıyla geliştirilen deneysel bir uzaktan yönetim projesidir.
 
 Proje henüz geliştirme aşamasındadır. Teknik ayrıntılar, dokümantasyon ve geliştirme sürecine ilişkin güncellemeler ilerleyen aşamalarda paylaşılacaktır.
