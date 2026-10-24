@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Amaç-Eğitim%20ve%20Araştırma-lightgrey?style=for-the-badge">
 </p>---
 
-*Hakkında*
+## Hakkında
 
 ![Panel Ekran Görüntüsü](goruntuler/Screenshot_2026-10-24_06_15_24.png)
 
