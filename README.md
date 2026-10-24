@@ -57,7 +57,7 @@ python -m venv venv
 
 source venv/bin/activate
 
-pip install fastapi uvicorn jinja2 --break-system-packages
+pip install fastapi uvicorn python-multipart jinja2 --break-system-packages
 ```
 
 Daha sonra
