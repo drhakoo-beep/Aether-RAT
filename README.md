@@ -110,7 +110,7 @@ Panelde sayfayı yenileyin ve cihaz isminin göründüğünü görebilirsiniz, �
 
 ## Sorumluluk Bildirimi
 
-Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanmaktadır. İzinsiz erişim, gözetim veya başkalarının verilerinin ele geçirilmesi amacıyla kullanılmamalıdır. Programda başlatmalara ekleme, kalıcılık yöntemleri, antivirüs yazılımlarını atlatma gibi amaçlar bulunmamaktadır, tüm sorumluluk kullanan kullanıcıya aittir.
+Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanmaktadır. İzinsiz erişim, gözetim veya başkalarının verilerinin ele geçirilmesi amacıyla kullanılmamalıdır. Programda başlatmalara ekleme, kalıcılık yöntemleri, antivirüs yazılımlarını atlatma gibi amaçlar bulunmamaktadır, tüm sorumluluk kullanan kullanıcıya aittir. Bu yazılımı kullanarak, sorumluluk bildirimini kabul etmiş olursunuz.
 
 
 *Geliştirme*
