@@ -47,6 +47,7 @@ Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanm
 Proje geliştikçe yeni bilgiler ve teknik belgeler bu depo üzerinden paylaşılacaktır.
 
 23 Ekim -> Temel C# kodu hazırlandı, web arayüzü tamamlanıyor.
+
 24 Ekim -> İlk sürüm yayınlandı.
 ---
 
