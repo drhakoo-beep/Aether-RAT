@@ -7,9 +7,6 @@
 <div align="center">
 
 [![GitHub Release](https://img.shields.io/github/v/release/drhakoo-beep/Aether-RAT?style=for-the-badge&color=cyan&logo=github&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/drhakoo-beep/Aether-RAT?style=for-the-badge&color=gold&logo=starship&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/drhakoo-beep/Aether-RAT?style=for-the-badge&color=blue&logo=git&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/network/members)
-[![GitHub Issues](https://img.shields.io/github/issues/drhakoo-beep/Aether-RAT?style=for-the-badge&color=orange&logo=issues&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/issues)
 [![GitHub License](https://img.shields.io/github/license/drhakoo-beep/Aether-RAT?style=for-the-badge&color=green&logo=opensourceinitiative&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/blob/main/LICENSE)
 
 </div>
@@ -104,6 +101,11 @@ Panelde sayfayı yenileyin ve cihaz isminin göründüğünü görebilirsiniz, �
 
 Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanmaktadır. İzinsiz erişim, gözetim veya başkalarının verilerinin ele geçirilmesi amacıyla kullanılmamalıdır. Programda başlatmalara ekleme, kalıcılık yöntemleri, antivirüs yazılımlarını atlatma gibi amaçlar bulunmamaktadır, tüm sorumluluk kullanan kullanıcıya aittir. Bu yazılımı kullanarak, sorumluluk bildirimini kabul etmiş olursunuz.
 
+
+## İletişim
+
+drhako42@gmail.com
+gokaltinhakan68@gmail.com
 
 *Geliştirme*
 
