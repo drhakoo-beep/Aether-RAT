@@ -1,7 +1,7 @@
 *Aether RAT*
 
 <p align="center">
-  <img src="logo01.png" width="220" alt="Aether RAT Logo">
+  <img src="logo001.png" width="220" alt="Aether RAT Logo">
 </p><p align="center">
   <strong>Windows Remote Administration & Security Research</strong>
 <div align="center">
