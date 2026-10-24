@@ -83,7 +83,7 @@ Panelde sayfayı yenileyin ve cihaz isminin göründüğünü görebilirsiniz, �
 
 ## Sorumluluk Bildirimi
 
-Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanmaktadır. İzinsiz erişim, gözetim veya başkalarının verilerinin ele geçirilmesi amacıyla kullanılmamalıdır.
+Bu proje eğitim ve yetkilendirilmiş güvenlik araştırmaları için tasarlanmaktadır. İzinsiz erişim, gözetim veya başkalarının verilerinin ele geçirilmesi amacıyla kullanılmamalıdır. Programda yeniden başlatmalara ekleme vb. gibi kalıcılık yöntemleri bulunmamaktadır, tüm sorumluluk kullanan kullanıcıya aittir.
 
 
 *Geliştirme*
