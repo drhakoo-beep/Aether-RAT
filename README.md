@@ -68,7 +68,7 @@ python main.py
 
 Panel açıldıktan sonra, program.cs dosyanızı .exe formatında derleyiniz.
 
-Derlendikten sonra sanal makinanıza veya izinli olduğunuz cihazlara flaşbellek vb. yöntemlerle .exe programına çift tıklayın ve artık hazırsınız.
+Derlendikten sonra sanal makinanıza veya izinli olduğunuz cihazlara flaşbellek vb. yöntemlerle indirin ve .exe programına çift tıklayın ve artık hazırsınız.
 
 Panelde sayfayı yenileyin ve cihaz isminin göründüğünü görebilirsiniz, üstüne tıklayın.
 
