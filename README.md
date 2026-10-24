@@ -4,11 +4,15 @@
   <img src="file_000000009bdc81f4a55cd9129079a153.png" width="220" alt="Aether RAT Logo">
 </p><p align="center">
   <strong>Windows Remote Administration & Security Research</strong>
-</p><p align="center">
-  <img src="https://img.shields.io/badge/Durum-Geliştirme%20Aşamasında-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Amaç-Eğitim%20ve%20Araştırma-lightgrey?style=for-the-badge">
-</p>---
+<div align="center">
+
+[![GitHub Release](https://img.shields.io/github/v/release/drhakoo-beep/Aether-RAT?style=for-the-badge&color=cyan&logo=github&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/drhakoo-beep/Aether-RAT?style=for-the-badge&color=gold&logo=starship&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/drhakoo-beep/Aether-RAT?style=for-the-badge&color=blue&logo=git&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/network/members)
+[![GitHub Issues](https://img.shields.io/github/issues/drhakoo-beep/Aether-RAT?style=for-the-badge&color=orange&logo=issues&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/issues)
+[![GitHub License](https://img.shields.io/github/license/drhakoo-beep/Aether-RAT?style=for-the-badge&color=green&logo=opensourceinitiative&logoColor=white)](https://github.com/drhakoo-beep/Aether-RAT/blob/main/LICENSE)
+
+</div>
 
 ## Hakkında
 
